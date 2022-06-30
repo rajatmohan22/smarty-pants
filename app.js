@@ -2,7 +2,7 @@ const express = require('express');
 const Router = require('express').Router()
 const app = express();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/smartyPants').then(()=>{
+mongoose.connect(process.env.MONGOURI).then(()=>{
     console.log("Database connected.")
 }).catch((e)=>{
     throw e;
